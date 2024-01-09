@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "connectionInfo": "App registration: Shortlinks, Tenant: Chambre des salariés (csl.lu - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    }
+  }
+}

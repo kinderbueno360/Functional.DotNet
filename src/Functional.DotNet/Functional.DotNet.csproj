@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Functional.DotNet</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Carlos Bueno</Authors>
+    <RepositoryUrl>https://github.com/kinderbueno360/Functional.DotNet</RepositoryUrl> 
+    <PackageTags>functional csharp .net Monads ErrorHandling DataTypes Immutable Validation dotnet</PackageTags>
+    <Description>
+      Functional.DotNet is a C# library designed to enrich the functional programming experience within the .NET ecosystem. This package offers a suite of powerful, easy-to-use functional constructs and utilities, enabling developers to write more expressive, concise, and reliable code.
+    </Description>
+  </PropertyGroup>
+</Project>

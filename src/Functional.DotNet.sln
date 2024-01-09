@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functional.DotNet", "Functional.DotNet\Functional.DotNet.csproj", "{4D43E297-1DC1-4148-B547-C42EA2544CB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functional.DotNet.Tests", "Functional.DotNet.Tests\Functional.DotNet.Tests.csproj", "{CA23DAA5-FB98-443E-8425-08AFCCBF2CF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D43E297-1DC1-4148-B547-C42EA2544CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D43E297-1DC1-4148-B547-C42EA2544CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D43E297-1DC1-4148-B547-C42EA2544CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D43E297-1DC1-4148-B547-C42EA2544CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA23DAA5-FB98-443E-8425-08AFCCBF2CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA23DAA5-FB98-443E-8425-08AFCCBF2CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA23DAA5-FB98-443E-8425-08AFCCBF2CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA23DAA5-FB98-443E-8425-08AFCCBF2CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64B79547-E632-4F46-B4E4-6B56173C108A}
+	EndGlobalSection
+EndGlobal
