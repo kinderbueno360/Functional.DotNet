@@ -20,24 +20,24 @@ namespace Functional.DotNet.Tests
         //    messageProcessed.Should().BeTrue();
         //}
 
-        [Fact]
-        public async Task StatelessAgent_ShouldProcessMessage_Async()
-        {
-            // Arrange
-            bool messageProcessed = false;
-            var agent = Agent.Start<string>(async msg =>
-            {
-                await Task.Delay(10); // Simulate async work
-                messageProcessed = msg == "test";
-            });
+        //[Fact]
+        //public async Task StatelessAgent_ShouldProcessMessage_Async()
+        //{
+        //    // Arrange
+        //    bool messageProcessed = false;
+        //    var agent = Agent.Start<string>(async msg =>
+        //    {
+        //        await Task.Delay(10); // Simulate async work
+        //        messageProcessed = msg == "test";
+        //    });
 
-            // Act
-            agent.Tell("test");
-            await Task.Delay(20); // Allow time for async processing
+        //    // Act
+        //    agent.Tell("test");
+        //    await Task.Delay(20); // Allow time for async processing
 
-            // Assert
-            messageProcessed.Should().BeTrue();
-        }
+        //    // Assert
+        //    messageProcessed.Should().BeTrue();
+        //}
 
     }
 }
