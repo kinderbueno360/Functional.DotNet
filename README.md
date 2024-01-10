@@ -1,5 +1,19 @@
 # Functional.DotNet
 
+## Installation
+To start using **Functional.DotNet** in your C# projects, install the package from NuGet:
+
+- Using Package Manager:
+```bash
+Install-Package Functional.DotNet -Version 1.0.3
+```
+
+- Using .NET CLI:
+```bash
+dotnet add package Functional.DotNet --version 1.0.3
+
+```
+
 ## Introduction
 Welcome to **Functional.DotNet**, a framework designed to enhance the functional programming experience in C#. Inspired by functional programming principles, this toolset enables developers to write more efficient, readable, and maintainable C# code.
 
