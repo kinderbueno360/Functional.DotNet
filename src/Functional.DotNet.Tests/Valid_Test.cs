@@ -1,4 +1,5 @@
 ﻿
+using FluentAssertions;
 using Functional.DotNet;
 using System;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace Functional.Net.Tests
            expected: Invalid("x is not an int")
         );
 
-       
+
 
         [Fact]
         public void TraversableA_HappyPath() => Assert.Equal(
@@ -54,7 +55,7 @@ namespace Functional.Net.Tests
            expected: Valid(10)
         );
 
-   
+
 
         [Fact]
         public void MapAndApplySomeArg_ReturnsSome() => Assert.Equal(
@@ -209,6 +210,103 @@ namespace Functional.Net.Tests
                 .Apply(Valid(4));
 
             Assert.Equal(first, second);
+        }
+
+        [Fact]
+        public void Valid_ShouldCreateValidValidation()
+        {
+            var validValue = F.Valid(42);
+
+            validValue.IsValid.Should().BeTrue();
+            validValue.Match(
+                Invalid: errors => errors.Should().BeEmpty(),
+                Valid: value => value.Should().Be(42));
+        }
+
+        [Fact]
+        public void Invalid_ShouldCreateInvalidValidation()
+        {
+            var errors = new List<Error> { new Error("Test error") };
+            var invalidValue = F.Invalid<int>(errors);
+
+            invalidValue.IsValid.Should().BeFalse();
+            invalidValue.Match(
+                Invalid: errs => errs.Should().ContainSingle().Which.Message.Should().Be("Test error"),
+                Valid: _ => Assert.True(false, "Should not be valid"));
+        }
+
+        [Fact]
+        public void Map_ShouldTransformValidValue()
+        {
+            var validValue = F.Valid(42);
+            var mappedValue = validValue.Map(v => v.ToString());
+
+            mappedValue.IsValid.Should().BeTrue();
+            mappedValue.Match(
+                Invalid: _ => Assert.True(false, "Should not be invalid"),
+                Valid: v => v.Should().Be("42"));
+        }
+
+        [Fact]
+        public void Map_ShouldNotTransformInvalidValue()
+        {
+            var invalidValue = F.Invalid<int>(new Error("Test error"));
+            var mappedValue = invalidValue.Map(v => v.ToString());
+
+            mappedValue.IsValid.Should().BeFalse();
+            mappedValue.Match(
+                Invalid: errs => errs.Should().ContainSingle().Which.Message.Should().Be("Test error"),
+                Valid: _ => Assert.True(false, "Should not be valid"));
+        }
+
+        [Fact]
+        public void Bind_ShouldTransformValidValue()
+        {
+            var validValue = F.Valid(5);
+            var boundValue = validValue.Bind(v => F.Valid(v * 2));
+
+            boundValue.IsValid.Should().BeTrue();
+            boundValue.Match(
+                Invalid: _ => Assert.True(false, "Should not be invalid"),
+                Valid: v => v.Should().Be(10));
+        }
+
+        [Fact]
+        public void Bind_ShouldNotTransformInvalidValue()
+        {
+            var invalidValue = F.Invalid<int>(new Error("Error"));
+            var boundValue = invalidValue.Bind(v => F.Valid(v * 2));
+
+            boundValue.IsValid.Should().BeFalse();
+            boundValue.Match(
+                Invalid: errs => errs.Should().ContainSingle().Which.Message.Should().Be("Error"),
+                Valid: _ => Assert.True(false, "Should not be valid"));
+        }
+
+        [Fact]
+        public void Apply_ShouldApplyFunctionToValidValue()
+        {
+            var validFunction = F.Valid<Func<int, int>>(x => x * 2);
+            var validValue = F.Valid(3);
+            var appliedValue = validFunction.Apply(validValue);
+
+            appliedValue.IsValid.Should().BeTrue();
+            appliedValue.Match(
+                Invalid: _ => Assert.True(false, "Should not be invalid"),
+                Valid: v => v.Should().Be(6));
+        }
+
+        [Fact]
+        public void Apply_ShouldNotApplyFunctionToInvalidValue()
+        {
+            var validFunction = F.Valid<Func<int, int>>(x => x * 2);
+            var invalidValue = F.Invalid<int>(new Error("Error"));
+            var appliedValue = validFunction.Apply(invalidValue);
+
+            appliedValue.IsValid.Should().BeFalse();
+            appliedValue.Match(
+                Invalid: errs => errs.Should().ContainSingle().Which.Message.Should().Be("Error"),
+                Valid: _ => Assert.True(false, "Should not be valid"));
         }
     }
 }
