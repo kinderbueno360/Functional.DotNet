@@ -1,5 +1,4 @@
-﻿
-namespace Functional.DotNet
+﻿namespace Functional.DotNet.Monad
 {
     using static F;
 
@@ -7,7 +6,8 @@ namespace Functional.DotNet
     {
         public static Option<int> Parse(string s)
            => int.TryParse(s, out int result)
-              ? Some(result) : None;
+              ? Some(result) 
+            : None;
 
         public static bool IsOdd(int i) => i % 2 == 1;
 

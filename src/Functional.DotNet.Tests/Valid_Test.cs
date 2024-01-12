@@ -1,6 +1,7 @@
 ﻿
 using FluentAssertions;
 using Functional.DotNet;
+using Functional.DotNet.Monad;
 using System;
 using System.Linq;
 using Xunit;

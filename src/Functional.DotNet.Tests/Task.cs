@@ -1,5 +1,6 @@
 ﻿
 using Functional.DotNet;
+using Functional.DotNet.Extensions;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,7 +15,7 @@ namespace Functional.Net.Tests
         [Fact]
         public async void WhenTSucceeds_ThenMapSucceeds()
         {
-            var actual = await Succeed("value").Map(Functional.DotNet.String.ToUpper);
+            var actual = await Succeed("value").Map(DotNet.Extensions.String.ToUpper);
             Assert.Equal("VALUE", actual);
         }
 
@@ -25,11 +26,11 @@ namespace Functional.Net.Tests
         // note that the type of the Exception should be preserved
         [Fact]
         public async void WhenTFails_ThenMapFails() =>
-           await Assert.ThrowsAsync<Exception>(() => Fail().Map(Functional.DotNet.String.ToUpper));
+           await Assert.ThrowsAsync<Exception>(() => Fail().Map(DotNet.Extensions.String.ToUpper));
 
         [Fact]
         public void MapThrowsNoExceptions() =>
-           Fail().Map(Functional.DotNet.String.ToUpper).Map(Functional.DotNet.String.Trim);
+           Fail().Map(DotNet.Extensions.String.ToUpper).Map(DotNet.Extensions.String.Trim);
 
         [Fact]
         public void BindThrowsNoExceptions() =>

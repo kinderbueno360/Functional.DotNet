@@ -1,12 +1,11 @@
-﻿using Functional.DotNet;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Functional.DotNet
+namespace Functional.DotNet.Extensions
 {
     using static F;
     public static class NumbersConvert
@@ -17,7 +16,7 @@ namespace Functional.DotNet
         public const float MMUnityInInch = 2.54f;
 
         public static int RoundOff(this int value) =>
-            ((int)Math.Round(value / 100000.0)) * 100000;
+            (int)Math.Round(value / 100000.0) * 100000;
 
 
 

@@ -1,5 +1,4 @@
-﻿
-namespace Functional.DotNet
+﻿namespace Functional.DotNet.Extensions
 {
     using static F;
 

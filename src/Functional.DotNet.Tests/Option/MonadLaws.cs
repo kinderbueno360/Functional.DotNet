@@ -51,8 +51,8 @@ namespace Functional.Net.Tests.Option
 
         [Property(Arbitrary = new[] { typeof(ArbitraryOption) })]
         void AssociativityHolds(Option<string> m) => Assert.Equal(
-           m.Bind(DotNet.Double.Parse).Bind(safeSqrt),
-           m.Bind(x => DotNet.Double.Parse(x).Bind(safeSqrt))
+           m.Bind(DotNet.Extensions.Double.Parse).Bind(safeSqrt),
+           m.Bind(x => DotNet.Extensions.Double.Parse(x).Bind(safeSqrt))
         );
     }
 }

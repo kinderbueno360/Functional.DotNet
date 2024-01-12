@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Functional.DotNet
+﻿namespace Functional.DotNet.Extensions
 {
     public static class String
     {

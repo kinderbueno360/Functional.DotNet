@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Functional.DotNet
+namespace Functional.DotNet.Monad
 {
     /// <summary>
     /// This class is used on the client 
