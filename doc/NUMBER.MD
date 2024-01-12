@@ -56,6 +56,9 @@ Number result = initialNumber
                     .Bind(Add5);
 // result is Number containing 25 (10 * 2 + 5)
 
+Number result = initialNumber
+                    .Map(MultiplyBy2)
+// result is Number containing 20 (10 * 2)
 ```
 
 - **Map**: Applies a transformation to the `Number`, altering its value while maintaining the structural integrity. It is best used for straightforward, guaranteed transformations.
