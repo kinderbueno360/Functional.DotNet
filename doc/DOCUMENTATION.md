@@ -14,6 +14,9 @@ In these documents, you will find explanations of key concepts, usage examples, 
 - **[Try](/doc/TRY.MD)**: Explanation of the `Try` type, designed for exception-safe computations and functional error handling.
 - **[Result](/doc/RESULT.MD)**: Overview of the `Result` type, often used for representing the outcome of operations that can succeed or fail.
 - **[Agent](/doc/AGENT.MD)**:  A guide to the `Agent` types, used for managing state and message processing in a functional style, suitable for concurrent and asynchronous operations..
+- **[Identity](/doc/IDENTITY.MD)**: Information on the `Identity` type, a monad used to wrap values in functional programming.
+- **[OneAmong](/doc/ONEAMONG.MD)**: Details about the `OneAmong` type, a discriminated union used to represent a value that can take on different forms.
+
 
 ## Getting Started
 To get started with Functional.DotNet, we recommend reading through each of these documents in order. They provide a comprehensive overview of the framework's capabilities and how to use them effectively in your C# projects.
