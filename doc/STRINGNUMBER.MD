@@ -74,7 +74,7 @@ string stringValue = maybeNumber.ToString();
 
 ```csharp
 StringNumber maybeNumber = StringNumber.Create(null);
-StringNumber fallbackNumber = maybeNumber.GetOrElse(StringNumber.Create("0"));
+StringNumber fallbackNumber = maybeNumber.GetOrElse("0");
 ```
 
 
