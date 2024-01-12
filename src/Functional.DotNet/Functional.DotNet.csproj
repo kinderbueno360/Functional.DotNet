@@ -14,5 +14,12 @@
     <Description>
       Functional.DotNet is a C# library designed to enrich the functional programming experience within the .NET ecosystem. This package offers a suite of powerful, easy-to-use functional constructs and utilities, enabling developers to write more expressive, concise, and reliable code.
     </Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/kinderbueno360/Functional.DotNet</PackageProjectUrl>
   </PropertyGroup>
+  <ItemGroup>
+    
+    <None Include="docs\README.md" Pack="true" PackagePath="\"/>
+    
+</ItemGroup>
 </Project>

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Functional.DotNet.F;
 
-namespace Functional.DotNet
+namespace Functional.DotNet.Extensions
 {
     public static class Decimal
     {

@@ -1,5 +1,4 @@
-﻿using Functional.DotNet;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +8,7 @@ namespace Functional.DotNet.MonadStacks
 {
     using static Functional.DotNet.F;
     using Functional.DotNet;
+    using Functional.DotNet.Monad;
 
     public static class TaskResultMonad
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Policy;
 
-namespace Functional.DotNet
+namespace Functional.DotNet.ValueObject
 {
     using static F;
 
@@ -29,29 +29,29 @@ namespace Functional.DotNet
         private readonly int DayOfYear;
 
         private bool ThursdayFlag =>
-            (StartWeekDayOfYear == THURSDAY || EndWeekDayOfYear == THURSDAY);
+            StartWeekDayOfYear == THURSDAY || EndWeekDayOfYear == THURSDAY;
 
-        private int WeekNumberInTheYear => 
-            (DaysInFirstWeek >= THURSDAY) 
-                ? FullWeeks+1 
+        private int WeekNumberInTheYear =>
+            DaysInFirstWeek >= THURSDAY
+                ? FullWeeks + 1
                 : FullWeeks > 52 && !ThursdayFlag
                     ? 1
-                    : FullWeeks; 
-        
+                    : FullWeeks;
+
         public Option<int> GetWeekNumber() =>
-            WeekNumberInTheYear > 0 
-                ? WeekNumberInTheYear 
+            WeekNumberInTheYear > 0
+                ? WeekNumberInTheYear
                 : None;
 
         // If the year either starts or ends on a thursday it will have a 53rd week
         public bool Is53WeeksYear =>
-            (StartWeekDayOfYear == THURSDAY || EndWeekDayOfYear == THURSDAY)
+            StartWeekDayOfYear == THURSDAY || EndWeekDayOfYear == THURSDAY
                 ? true
                 : false;
 
         // We begin by calculating the number of FULL weeks between the start of the year and
         // our date. The number is rounded up, so the smallest possible value is 0.
-        public int FullWeeks => (int)Math.Ceiling((DayOfYear - (DaysInFirstWeek)) / 7.0);
+        public int FullWeeks => (int)Math.Ceiling((DayOfYear - DaysInFirstWeek) / 7.0);
 
 
         protected DayOfWeekInfo(DayOfWeekInfo original)

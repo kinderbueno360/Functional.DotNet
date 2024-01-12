@@ -2,6 +2,7 @@
 using System;
 using FsCheck.Xunit;
 using Functional.DotNet;
+using Functional.DotNet.Extensions;
 
 namespace Functional.Net.Tests.Option
 {
@@ -24,8 +25,8 @@ namespace Functional.Net.Tests.Option
         [Property(Arbitrary = new[] { typeof(ArbitraryOption) })]
         public void SingleClauseLINQExpr(Option<string> opt)
            => Assert.Equal(
-                 from x in opt select DotNet.String.ToUpper(x),
-                 opt.Map(DotNet.String.ToUpper));
+                 from x in opt select DotNet.Extensions.String.ToUpper(x),
+                 opt.Map(DotNet.Extensions.String.ToUpper));
 
         [Property(Arbitrary = new[] { typeof(ArbitraryOption) })]
         public void TwoClauseLINQExpr(Option<string> optA, Option<string> optB)

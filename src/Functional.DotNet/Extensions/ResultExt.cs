@@ -1,4 +1,5 @@
-﻿using Functional.DotNet.MonadStacks;
+﻿using Functional.DotNet.Monad;
+using Functional.DotNet.MonadStacks;
 
 namespace Functional.DotNet
 {

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Functional.DotNet
+namespace Functional.DotNet.Extensions
 {
     public static class OptionConvert
     {
