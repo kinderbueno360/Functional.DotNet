@@ -17,6 +17,9 @@ In these documents, you will find explanations of key concepts, usage examples, 
 - **[Identity](/doc/IDENTITY.MD)**: Information on the `Identity` type, a monad used to wrap values in functional programming.
 - **[OneAmong](/doc/ONEAMONG.MD)**: Details about the `OneAmong` type, a discriminated union used to represent a value that can take on different forms.
 
+## Value Objects
+
+- **[Number](/doc/NUMBER.MD)**: Details about the `Number`.
 
 ## Getting Started
 To get started with Functional.DotNet, we recommend reading through each of these documents in order. They provide a comprehensive overview of the framework's capabilities and how to use them effectively in your C# projects.
