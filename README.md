@@ -23,7 +23,28 @@ Welcome to **Functional.DotNet**, a framework designed to enhance the functional
 - **Seamless Integration**: Integrates smoothly with existing C# projects.
 
 ## Documentation
-For a comprehensive guide on how to integrate and utilize **Functional.DotNet** in your C# projects, please refer to our [official documentation](./doc/DOCUMENTATION.md).
+For a comprehensive guide on how to integrate and utilize **Functional.DotNet** in your C# projects, please refer to our [official documentation](https://github.com/kinderbueno360/Functional.DotNet/blob/main/doc/DOCUMENTATION.md).
+
+## What's New in Version 1.1.0
+In version 1.1.0, we have introduced several new features to enhance your functional programming experience:
+
+## OneAmong
+The `OneAmong` type is a discriminated union that can hold a value of one among several possible types. It is commonly used in functional programming to represent a value that can take on different forms. Here's a sample of how to use it:
+
+```csharp
+OneAmong<int, string> value = new OneAmong<int, string>(42);
+value.Match(
+    Case<int>(x => Console.WriteLine($"It's an integer: {x}")),
+    Case<string>(s => Console.WriteLine($"It's a string: {s}"))
+);
+```
+
+## Agent
+The `Agent` type provides a simple way to manage mutable state in a functional and thread-safe manner. It encapsulates state and allows you to perform operations on it safely.
+
+## Identity
+The `Identity` type is a monad that wraps a value. It's a simple container for a single value and is used to bring functional programming concepts to C#.
+
 
 
 ## Getting Started
