@@ -20,7 +20,7 @@ namespace Functional.DotNet.ValueObject
         public static Money Create(Number amount, Currency currency) =>
             new Money(amount, currency);
 
-        public static Money None => new Money(0, Currency.None);
+        public static Money None => new Money(Number.None, Currency.None);
 
         public void Deconstruct(out Number amount, out Currency currency)
         {

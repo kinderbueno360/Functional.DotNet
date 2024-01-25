@@ -15,8 +15,6 @@ namespace Functional.DotNet.ValueObject
             Code = code;
         }
 
-        public void Deconstruct(out string code) => code = Code;
-
         public static implicit operator Country(string code) => new Country(code);
 
         public static Country None => new Country(string.Empty);
