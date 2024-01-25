@@ -21,6 +21,7 @@ In these documents, you will find explanations of key concepts, usage examples, 
 
 - **[Number](/doc/NUMBER.MD)**: Details about the `Number`.
 - **[SringNumber](/doc/STRINGNUMBER.MD)**: Details about the `StringNumber`.
+- **[Date](/doc/DATE.MD)**: Details about the `Date`.
 
 ## Getting Started
 To get started with Functional.DotNet, we recommend reading through each of these documents in order. They provide a comprehensive overview of the framework's capabilities and how to use them effectively in your C# projects.
