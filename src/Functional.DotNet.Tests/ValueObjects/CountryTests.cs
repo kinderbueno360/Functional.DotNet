@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Functional.DotNet.Tests
+namespace Functional.DotNet.Tests.ValueObjects
 {
     public class CountryTests
     {
@@ -22,7 +22,7 @@ namespace Functional.DotNet.Tests
             Assert.Equal(countryCode, country.GetCode());
         }
 
-  
+
         [Fact]
         public void Country_ImplicitConversionFromString_CreatesCorrectCountry()
         {

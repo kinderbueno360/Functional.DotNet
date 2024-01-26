@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Functional.DotNet.Tests
+namespace Functional.DotNet.Tests.ValueObjects
 {
     public class CurrencyTests
     {
