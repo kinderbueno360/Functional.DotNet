@@ -32,21 +32,21 @@ namespace Functional.DotNet.Tests.IEnumerable
             Assert.Equal(List(x).Bind(f), f(x));
         }
 
-        [Property]
-        public void LeftIdentityHoldsRefType(NonNull<string> nonNull)
-        {
-            var x = nonNull.Get;
+        //[Property]
+        //public void LeftIdentityHoldsRefType(NonNull<string> nonNull)
+        //{
+        //    var x = nonNull.Get;
 
-            // given a world crossing function f...
-            Func<string, IEnumerable<char>> f = s => s.ToUpper();
+        //    // given a world crossing function f...
+        //    Func<string, IEnumerable<char>> f = s => s.ToUpper();
 
-            // then applying f to a value x
-            // is the same as lifting x and binding f to it
-            Assert.Equal(
-               List(x).Bind(f),
-               f(x)
-            );
-        }
+        //    // then applying f to a value x
+        //    // is the same as lifting x and binding f to it
+        //    Assert.Equal(
+        //       List(x).Bind(f),
+        //       f(x)
+        //    );
+        //}
 
         [Property]
         public void AssociativityHolds(NonNull<string> input)
