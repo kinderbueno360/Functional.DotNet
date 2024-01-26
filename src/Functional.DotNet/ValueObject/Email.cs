@@ -26,8 +26,6 @@ namespace Functional.DotNet.ValueObject
         public static Email Create(string localPart = "", string domain = "") =>
             new Email(localPart, domain);
 
-        public static Email Empty => new();
-
         public string Address => string.IsNullOrEmpty(localPart)
             ? string.Empty
             : $"{localPart}@{domain}";
