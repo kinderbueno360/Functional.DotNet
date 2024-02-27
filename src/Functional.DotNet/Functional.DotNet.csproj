@@ -19,7 +19,10 @@
   </PropertyGroup>
   <ItemGroup>
     
-    <None Include="docs\README.md" Pack="true" PackagePath="\"/>
+    <None Include="docs\README.md" Pack="true" PackagePath="\" />
     
 </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="6.0.1-preview.1" />
+  </ItemGroup>
 </Project>
